@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="12.0.2" class="java.beans.XMLDecoder">
+ <object class="sample.things.Sneakers">
+  <void property="body">
+   <object class="sample.elements.Body">
+    <void property="material">
+     <string>b1</string>
+    </void>
+   </object>
+  </void>
+  <void property="laces">
+   <object class="sample.elements.Laces">
+    <void property="length">
+     <int>40</int>
+    </void>
+   </object>
+  </void>
+  <void property="model">
+   <string>m1</string>
+  </void>
+  <void property="size">
+   <int>44</int>
+  </void>
+  <void property="sole">
+   <object class="sample.elements.Sole">
+    <void property="material">
+     <string>s1</string>
+    </void>
+   </object>
+  </void>
+  <void property="type">
+   <string>Women</string>
+  </void>
+ </object>
+</java>

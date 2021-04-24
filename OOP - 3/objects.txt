@@ -1,0 +1,61 @@
+-------------------------------------------------------------------
+class sample.things.Sneakers
+  sole class sample.elements.Sole
+{
+  material class java.lang.String 33
+}
+  laces class sample.elements.Laces
+{
+  length int 35
+}
+  body class sample.elements.Body
+{
+  material class java.lang.String 33
+}
+  model class java.lang.String 123
+  size int 44
+  type class java.lang.String Women
+-------------------------------------------------------------------
+class sample.things.Sneakers
+  sole class sample.elements.Sole
+{
+  material class java.lang.String 33
+}
+  laces class sample.elements.Laces
+{
+  length int 41
+}
+  body class sample.elements.Body
+{
+  material class java.lang.String 33
+}
+  model class java.lang.String 33
+  size int 42
+  type class java.lang.String Men
+-------------------------------------------------------------------
+class sample.things.Sandals
+  body class sample.elements.Body
+{
+  material class java.lang.String 5
+}
+  sole class sample.elements.Sole
+{
+  material class java.lang.String 5
+}
+  model class java.lang.String 5
+  size int 39
+  type class java.lang.String Women
+-------------------------------------------------------------------
+class sample.things.RollerSkates
+  body class sample.elements.Body
+{
+  material class java.lang.String a
+}
+  wheels class sample.elements.Wheels
+{
+  material class java.lang.String a
+}
+  model class java.lang.String aa
+  size int 39
+  type class java.lang.String Women
+-------------------------------------------------------------------
