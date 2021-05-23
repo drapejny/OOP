@@ -7,18 +7,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="713.0" prefWidth="861.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="667.0" prefWidth="601.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.Controller">
    <children>
-      <ListView fx:id="modelsListView" layoutX="53.0" layoutY="51.0" prefHeight="612.0" prefWidth="239.0" />
-      <Button fx:id="addBtn" layoutX="320.0" layoutY="617.0" mnemonicParsing="false" text="Add" />
-      <Button fx:id="editBtn" layoutX="363.0" layoutY="617.0" mnemonicParsing="false" text="Edit" />
-      <Button fx:id="deleteBtn" layoutX="407.0" layoutY="617.0" mnemonicParsing="false" text="Delete" />
+      <ListView fx:id="modelsListView" layoutX="53.0" layoutY="51.0" prefHeight="565.0" prefWidth="239.0" />
+      <Button fx:id="addBtn" layoutX="359.0" layoutY="135.0" mnemonicParsing="false" text="Add" />
+      <Button fx:id="editBtn" layoutX="402.0" layoutY="135.0" mnemonicParsing="false" text="Edit" />
+      <Button fx:id="deleteBtn" layoutX="446.0" layoutY="135.0" mnemonicParsing="false" text="Delete" />
       <ComboBox fx:id="shoesTypeComboBox" layoutX="353.0" layoutY="94.0" prefWidth="150.0" />
       <Text layoutX="352.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shoes type" />
-      <RadioButton fx:id="txtBtn" layoutX="618.0" layoutY="569.0" mnemonicParsing="false" text="txt" />
-      <RadioButton fx:id="binBtn" layoutX="618.0" layoutY="593.0" mnemonicParsing="false" text="bin" />
-      <RadioButton layoutX="618.0" layoutY="621.0" mnemonicParsing="false" text="xml" fx:id="xmlBtn" />
-      <Button fx:id="saveBtn" layoutX="695.0" layoutY="574.0" mnemonicParsing="false" text="Save" />
-      <Button fx:id="loadBtn" layoutX="696.0" layoutY="608.0" mnemonicParsing="false" text="Load" />
+      <RadioButton fx:id="txtBtn" layoutX="360.0" layoutY="187.0" mnemonicParsing="false" text="txt" />
+      <RadioButton fx:id="binBtn" layoutX="360.0" layoutY="211.0" mnemonicParsing="false" text="bin" />
+      <RadioButton layoutX="360.0" layoutY="239.0" mnemonicParsing="false" text="xml" fx:id="xmlBtn" />
+      <Button fx:id="saveBtn" layoutX="437.0" layoutY="192.0" mnemonicParsing="false" text="Save" />
+      <Button fx:id="loadBtn" layoutX="438.0" layoutY="226.0" mnemonicParsing="false" text="Load" />
+      <Button fx:id="transformButton" layoutX="468.0" layoutY="393.0" mnemonicParsing="false" text="Transform" />
+      <ListView fx:id="pluginsListView" layoutX="331.0" layoutY="317.0" prefHeight="134.0" prefWidth="130.0" />
    </children>
 </AnchorPane>

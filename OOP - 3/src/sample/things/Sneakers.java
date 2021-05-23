@@ -1,5 +1,6 @@
 package sample.things;
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -19,27 +20,27 @@ public class Sneakers extends SportShoes {
     private Laces laces;
     private Body body;
 
-
+    @JacksonXmlProperty(isAttribute=true)
     public Sole getSole() {
         return sole;
     }
-
+    @JacksonXmlProperty(isAttribute=true)
     public void setSole(Sole sole) {
         this.sole = sole;
     }
-
+    @JacksonXmlProperty(isAttribute=true)
     public Laces getLaces() {
         return laces;
     }
-
+    @JacksonXmlProperty(isAttribute=true)
     public void setLaces(Laces laces) {
         this.laces = laces;
     }
-
+    @JacksonXmlProperty(isAttribute=true)
     public Body getBody() {
         return body;
     }
-
+    @JacksonXmlProperty(isAttribute=true)
     public void setBody(Body body) {
         this.body = body;
     }

@@ -1,0 +1,6 @@
+<Objects>
+<Sneakers><type>Men</type><size>42</size><model>23</model><sole><material>123</material></sole><laces><length>35</length></laces><body><material>1321</material></body></Sneakers>
+<Sneakers><type>Men</type><size>42</size><model>1</model><sole><material>1</material></sole><laces><length>35</length></laces><body><material>1</material></body></Sneakers>
+<IceSkates><type>Men</type><size>42</size><model>32</model><body><material>231</material></body><laces><length>35</length></laces><blade><material>23</material></blade></IceSkates>
+<Sandals><type>Women</type><size>44</size><model>a</model><body><material>a</material></body><sole><material>a</material></sole></Sandals>
+</Objects>

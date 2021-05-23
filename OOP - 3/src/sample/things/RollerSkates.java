@@ -1,5 +1,6 @@
 package sample.things;
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,18 +17,19 @@ public class RollerSkates extends SportShoes {
     private Body body;
     private Wheels wheels;
 
+    @JacksonXmlProperty(isAttribute=true)
     public Body getBody() {
         return body;
     }
-
+    @JacksonXmlProperty(isAttribute=true)
     public void setBody(Body body) {
         this.body = body;
     }
-
+    @JacksonXmlProperty(isAttribute=true)
     public Wheels getWheels() {
         return wheels;
     }
-
+    @JacksonXmlProperty(isAttribute=true)
     public void setWheels(Wheels wheels) {
         this.wheels = wheels;
     }

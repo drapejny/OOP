@@ -1,12 +1,17 @@
 package sample.controllers;
 
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.layout.VBox;
 import sample.Main;
+import sample.Plugin;
+import sample.PluginLoader;
 import sample.things.*;
 
-import java.beans.XMLDecoder;
-import java.beans.XMLEncoder;
 import java.io.*;
 import java.lang.reflect.Field;
 import java.nio.file.Files;
@@ -14,7 +19,6 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.spi.AbstractResourceBundleProvider;
 
 public class Controller {
     @FXML
@@ -37,9 +41,26 @@ public class Controller {
     private Button saveBtn;
     @FXML
     private Button loadBtn;
+    @FXML
+    private ListView<Plugin> pluginsListView;
+    @FXML
+    private Button transformButton;
 
 
-    public void initialize() {
+    public void initialize() throws NoSuchMethodException {
+
+        //Загружаем плагины
+        PluginLoader pluginLoader = PluginLoader.getInstance();
+        ArrayList<Plugin> plugins = pluginLoader.readPluginBytes();
+        //Отображаем плагины
+        ObservableList<Plugin> pluginObservableList = FXCollections.observableArrayList();
+        for(Plugin p : plugins){
+            pluginObservableList.add(p);
+        }
+        pluginsListView.setItems(pluginObservableList);
+        pluginsListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+
+
         shoesTypeComboBox.getItems().addAll("Sneakers", "Sandals", "Boots", "IceSkates", "RollerSkates");
         modelsListView.setItems(Main.things);
 
@@ -48,6 +69,13 @@ public class Controller {
         xmlBtn.setToggleGroup(methodGroup);
         binBtn.setToggleGroup(methodGroup);
         txtBtn.setToggleGroup(methodGroup);
+
+        transformButton.setOnAction(actionEvent -> {
+            ObservableList<Plugin> selectedPlugins = pluginsListView.getSelectionModel().getSelectedItems();
+            for(Plugin p : selectedPlugins){
+                p.transform();
+            }
+        });
 
         addBtn.setOnAction(actionEvent -> {
             Thing thing = null;
@@ -83,14 +111,16 @@ public class Controller {
 
         saveBtn.setOnAction(actionEvent -> {
             if (xmlBtn.isSelected()) {
-                try {
-                    FileOutputStream fos = new FileOutputStream("objects.xml");
-                    XMLEncoder xmlEncoder = new XMLEncoder(fos);
+                try (FileWriter fileWriter = new FileWriter("objects.xml", false)) {
+                    File file = new File("objects.xml");
+                    XmlMapper xmlMapper = new XmlMapper();
+                    fileWriter.write("<Objects>\n");
                     for (int i = 0; i < Main.things.size(); i++) {
-                        xmlEncoder.writeObject(Main.things.get(i));
+                        String line = xmlMapper.writeValueAsString(Main.things.get(i));
+                        fileWriter.write(line);
+                        fileWriter.append('\n');
                     }
-                    xmlEncoder.close();
-                    fos.close();
+                    fileWriter.write("</Objects>");
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 } catch (IOException e) {
@@ -164,17 +194,22 @@ public class Controller {
         loadBtn.setOnAction(actionEvent -> {
             if (xmlBtn.isSelected()) {
                 try {
-                    FileInputStream fis = new FileInputStream("objects.xml");
-                    XMLDecoder xmlDecoder = new XMLDecoder(fis);
-                    try {
-                        Main.things.clear();
-                        while (true)
-                            Main.things.add((Thing) xmlDecoder.readObject());
-                    } catch (ArrayIndexOutOfBoundsException e) {
-
+                    File file = new File("objects.xml");
+                    List<String> lines = Files.readAllLines(Paths.get("objects.xml"));
+                    XmlMapper xmlMapper = new XmlMapper();
+                    Main.things.clear();
+                    for (int i = 1; i < lines.size() - 1; i++) {
+                        int j = 1;
+                        String cl = "";
+                        while (lines.get(i).charAt(j) != ' ') {
+                            cl += lines.get(i).charAt(j);
+                            j++;
+                        }
+                        Thing t = (Thing) xmlMapper.readValue(lines.get(i), Class.forName("sample.things." + cl));
+                        Main.things.add(t);
                     }
-                    xmlDecoder.close();
-                    fis.close();
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 } catch (IOException e) {

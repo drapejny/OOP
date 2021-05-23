@@ -2,60 +2,73 @@
 class sample.things.Sneakers
   sole class sample.elements.Sole
 {
-  material class java.lang.String 33
+  material class java.lang.String Резина
 }
   laces class sample.elements.Laces
 {
-  length int 35
+  length int 40
 }
   body class sample.elements.Body
 {
-  material class java.lang.String 33
+  material class java.lang.String Кожа
 }
-  model class java.lang.String 123
+  model class java.lang.String ABC 11
   size int 44
   type class java.lang.String Women
 -------------------------------------------------------------------
 class sample.things.Sneakers
   sole class sample.elements.Sole
 {
-  material class java.lang.String 33
+  material class java.lang.String Карбон
 }
   laces class sample.elements.Laces
 {
-  length int 41
+  length int 46
 }
   body class sample.elements.Body
 {
-  material class java.lang.String 33
+  material class java.lang.String Карбон
 }
-  model class java.lang.String 33
-  size int 42
+  model class java.lang.String BB 22
+  size int 37
   type class java.lang.String Men
 -------------------------------------------------------------------
-class sample.things.Sandals
+class sample.things.Boots
   body class sample.elements.Body
 {
-  material class java.lang.String 5
+  material class java.lang.String Кожа
 }
   sole class sample.elements.Sole
 {
-  material class java.lang.String 5
+  material class java.lang.String Резина
 }
-  model class java.lang.String 5
-  size int 39
-  type class java.lang.String Women
+  model class java.lang.String Ботиночки
+  size int 48
+  type class java.lang.String Men
+-------------------------------------------------------------------
+class sample.things.Boots
+  body class sample.elements.Body
+{
+  material class java.lang.String Кожа
+}
+  sole class sample.elements.Sole
+{
+  material class java.lang.String Кожа
+}
+  model class java.lang.String Боты
+  size int 40
+  type class java.lang.String Men
 -------------------------------------------------------------------
 class sample.things.RollerSkates
   body class sample.elements.Body
 {
-  material class java.lang.String a
+  material class java.lang.String Кожа
 }
   wheels class sample.elements.Wheels
 {
-  material class java.lang.String a
+  material class java.lang.String Полипропелен
 }
-  model class java.lang.String aa
+  model class java.lang.String Rolling 89
   size int 39
-  type class java.lang.String Women
+  type class java.lang.String Men
 -------------------------------------------------------------------

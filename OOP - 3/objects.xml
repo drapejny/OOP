@@ -1,35 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<java version="12.0.2" class="java.beans.XMLDecoder">
- <object class="sample.things.Sneakers">
-  <void property="body">
-   <object class="sample.elements.Body">
-    <void property="material">
-     <string>b1</string>
-    </void>
-   </object>
-  </void>
-  <void property="laces">
-   <object class="sample.elements.Laces">
-    <void property="length">
-     <int>40</int>
-    </void>
-   </object>
-  </void>
-  <void property="model">
-   <string>m1</string>
-  </void>
-  <void property="size">
-   <int>44</int>
-  </void>
-  <void property="sole">
-   <object class="sample.elements.Sole">
-    <void property="material">
-     <string>s1</string>
-    </void>
-   </object>
-  </void>
-  <void property="type">
-   <string>Women</string>
-  </void>
- </object>
-</java>
+<Objects>
+<Sneakers type="Men" size="42" model="23"><sole material="123"/><laces length="35"/><body material="1321"/></Sneakers>
+<Sneakers type="Men" size="42" model="1"><sole material="1"/><laces length="35"/><body material="1"/></Sneakers>
+<IceSkates type="Men" size="42" model="32"><body material="231"/><laces length="35"/><blade material="23"/></IceSkates>
+<Sandals type="Women" size="44" model="a"><body material="a"/><sole material="a"/></Sandals>
+</Objects>

@@ -20,8 +20,10 @@ public class Main extends Application {
     public static Scene scene;
     public static Controller controller;
 
+
     @Override
     public void start(Stage primaryStage) throws Exception {
+
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/sample/forms/MainWindow.fxml"));
         Parent root = null;
@@ -30,6 +32,7 @@ public class Main extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         scene = new Scene(root);
         primaryStage.setScene(scene);
         stage = primaryStage;
